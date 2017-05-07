@@ -1,0 +1,27 @@
+{
+  "name": "headless-chrome",
+  "version": "0.0.0",
+  "description": "My neat module",
+  "license": "MIT",
+  "repository": "ragingwind/headless-chrome",
+  "author": {
+    "name": "ragingwind",
+    "email": "ragingwind@gmail.com",
+    "url": "ragingwind.me"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "chrome",
+    "chromium",
+    "headless"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
