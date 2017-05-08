@@ -15,6 +15,7 @@ $ npm install --global chrome-headless-launcher
 chrome-headless --help
 ```
 
+![chrome-headless](https://cloud.githubusercontent.com/assets/124117/25787736/eb05cb52-33de-11e7-97f0-642f6c510415.gif)
 
 ## License
 
