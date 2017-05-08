@@ -24,7 +24,7 @@ const cli = meow(`
 	Examples
 	  $ headless https://google.com
 	  $ headless https://google.com --port=9000
-		$ headless https://google.com --screenshot --window-size=1280,1696
+	  $ headless https://google.com --screenshot --window-size=1280,1696
 `);
 
 if (cli.input.length <= 0) {
