@@ -1,45 +1,22 @@
-# headless-chrome
+# chrome-headless-launcher
 
-> My neat module
+> Run the latest Chrome browser on CLI simply without head
 
 
 ## Install
 
 ```
-$ npm install --save headless-chrome
+$ npm install --global chrome-headless-launcher
 ```
 
 
 ## Usage
 
-```js
-const headlessChrome = require('headless-chrome');
-
-headlessChrome('unicorns');
-//=> 'unicorns & rainbows'
+```sh
+chrome-headless --help
 ```
-
-
-## API
-
-### headlessChrome(input, [options])
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
 
 
 ## License
 
-MIT © [ragingwind](http://ragingwind.me)
+MIT © [Jimmy Moon](http://ragingwind.me)

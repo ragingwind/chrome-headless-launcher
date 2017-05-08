@@ -1,9 +1,9 @@
 {
-  "name": "headless-chrome",
+  "name": "chrome-headless-launcher",
   "version": "0.0.0",
-  "description": "My neat module",
+  "description": "Run the Chrome browser simply without head installed on your system",
   "license": "MIT",
-  "repository": "ragingwind/headless-chrome",
+  "repository": "ragingwind/chrome-headless-launcher",
   "author": {
     "name": "ragingwind",
     "email": "ragingwind@gmail.com",
@@ -12,16 +12,22 @@
   "engines": {
     "node": ">=4"
   },
-  "scripts": {
+  "bin": {
+    "chrome-headless": "cli.js"
   },
+  "scripts": {},
   "files": [
-    "index.js"
+    "cli.js"
   ],
   "keywords": [
     "chrome",
     "chromium",
-    "headless"
+    "headless",
+    "chrome launcher"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "decamelize-keys": "^1.1.0",
+    "lighthouse": "^1.6.5"
+  },
   "devDependencies": {}
 }
