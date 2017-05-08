@@ -4,6 +4,9 @@
 const meow = require('meow');
 const { ChromeLauncher } = require('lighthouse/lighthouse-cli/chrome-launcher');
 const decamelizeKeys = require('decamelize-keys');
+const ora = require('ora');
+const random = require('random-int');
+const emoji = require('node-emoji')
 
 const cli = meow(`
 	Usage
@@ -42,7 +45,7 @@ const additionalFlags = Object.keys(flags).map(f => {
 
 const launcher = new ChromeLauncher({
 	startingUrl: cli.input[0],
-	port: 9222,
+	port: cli.flags['remote-debugging-port'],
 	autoSelectChrome: true,
 	additionalFlags: additionalFlags.concat([
 		'--disable-gpu',
@@ -51,7 +54,16 @@ const launcher = new ChromeLauncher({
 });
 
 // run headless chrome browser
-launcher.run();
+launcher.run().then(() => {
+	const debugURL = `http://localhost:${cli.flags['remote-debugging-port']}`;
+	const spinner = ora({
+		spinner: {
+			interval: 800,
+			frames: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => emoji.get(`clock${n}`))
+		},
+		text: `Chrome headless is running. Open ${debugURL} for debugging`
+	}).start();
+});
 
 // manage terminating of headless chrome browser
 const exitHandler = err => {

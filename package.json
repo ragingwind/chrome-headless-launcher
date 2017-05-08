@@ -27,7 +27,10 @@
   ],
   "dependencies": {
     "decamelize-keys": "^1.1.0",
-    "lighthouse": "^1.6.5"
+    "lighthouse": "^1.6.5",
+    "node-emoji": "^1.5.1",
+    "ora": "^1.2.0",
+    "random-int": "^1.0.0"
   },
   "devDependencies": {}
 }
