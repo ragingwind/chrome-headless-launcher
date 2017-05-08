@@ -26,6 +26,7 @@
     "chrome launcher"
   ],
   "dependencies": {
+    "array-with-number": "^0.2.0",
     "decamelize-keys": "^1.1.0",
     "lighthouse": "^1.6.5",
     "node-emoji": "^1.5.1",

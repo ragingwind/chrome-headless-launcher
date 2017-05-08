@@ -6,7 +6,8 @@ const { ChromeLauncher } = require('lighthouse/lighthouse-cli/chrome-launcher');
 const decamelizeKeys = require('decamelize-keys');
 const ora = require('ora');
 const random = require('random-int');
-const emoji = require('node-emoji')
+const emoji = require('node-emoji');
+const arrayWithNumber = require('array-with-number');
 
 const cli = meow(`
 	Usage
@@ -59,7 +60,7 @@ launcher.run().then(() => {
 	const spinner = ora({
 		spinner: {
 			interval: 800,
-			frames: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => emoji.get(`clock${n}`))
+			frames: arrayWithNumber(12, 1).map(n => emoji.get(`clock${n}`))
 		},
 		text: `Chrome headless is running. Open ${debugURL} for debugging`
 	}).start();

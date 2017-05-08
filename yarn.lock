@@ -28,9 +28,17 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
+array-fill-with-number@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/array-fill-with-number/-/array-fill-with-number-0.1.0.tgz#d2177bc194e67d1aa20a2a1a7e0593f3e325f614"
+
 array-find-index@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
+
+array-with-number@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/array-with-number/-/array-with-number-0.2.0.tgz#1a2636dab1804894c135a501b9ec90ba0a443591"
 
 async@^1.4.0:
   version "1.5.2"
