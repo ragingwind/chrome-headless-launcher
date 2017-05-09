@@ -54,13 +54,7 @@ const launcher = new ChromeLauncher({
 // run headless chrome browser
 launcher.run().then(() => {
 	const debugURL = `http://localhost:${cli.flags.remoteDebuggingPort}`;
-	const spinner = ora({
-		spinner: {
-			interval: 800,
-			frames: arrayWithNumber(12, 1).map(n => emoji.get(`clock${n}`))
-		},
-		text: `Chrome headless is running. Open ${debugURL} for debugging`
-	}).start();
+	console.log(`Chrome has been ${emoji.get('rocket')} in headless mode. Open ${debugURL} for debugging`);
 });
 
 // manage terminating of headless chrome browser
