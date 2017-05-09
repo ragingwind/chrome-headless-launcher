@@ -11,7 +11,10 @@ const arrayWithNumber = require('array-with-number');
 
 const cli = meow(`
 	Usage
-	  $ chrome-headless [url] [options]
+	  $ chrome-headless [input] [options]
+
+	Input
+	  url            target url [default: about:blank]
 
 	Options
 	  --port         same as remote-debugging-port [default: 9222]
@@ -28,16 +31,10 @@ const cli = meow(`
 `);
 
 if (cli.input.length <= 0) {
-	console.error('Target URL must be exist');
-	process.exit(-1);
+	cli.input.push('about:blank');
 }
 
-if (cli.flags.port) {
-	cli.flags['remote-debugging-port'] = cli.flags.port;
-	delete cli.flags.port;
-} else {
-	cli.flags['remote-debugging-port'] = 9222;
-}
+cli.flags.remoteDebuggingPort = cli.flags.port || 9222;
 
 const flags = decamelizeKeys(cli.flags, '-');
 const additionalFlags = Object.keys(flags).map(f => {
@@ -46,7 +43,7 @@ const additionalFlags = Object.keys(flags).map(f => {
 
 const launcher = new ChromeLauncher({
 	startingUrl: cli.input[0],
-	port: cli.flags['remote-debugging-port'],
+	port: cli.flags.remoteDebuggingPort,
 	autoSelectChrome: true,
 	additionalFlags: additionalFlags.concat([
 		'--disable-gpu',
@@ -56,7 +53,7 @@ const launcher = new ChromeLauncher({
 
 // run headless chrome browser
 launcher.run().then(() => {
-	const debugURL = `http://localhost:${cli.flags['remote-debugging-port']}`;
+	const debugURL = `http://localhost:${cli.flags.remoteDebuggingPort}`;
 	const spinner = ora({
 		spinner: {
 			interval: 800,
