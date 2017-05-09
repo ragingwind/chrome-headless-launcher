@@ -1,6 +1,6 @@
 {
   "name": "chrome-headless-launcher",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Run the Chrome browser simply without head installed on your system",
   "license": "MIT",
   "repository": "ragingwind/chrome-headless-launcher",
